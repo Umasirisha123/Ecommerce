@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+    color: rgb(88, 7, 34);
+    text-align: center;
+    margin-top: 50px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eec4b8;
+    height: 100vh;
+    padding: 20px;
+}
+form{
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f84f00;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgb(235, 140, 140);
+}
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #be4f04;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+button{
+    width: 100%;
+    padding: 12px;
+    background-color: #eb9d37;
+    color: rgb(12, 12, 12);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #e4682f;
+}
+@media (max-width: 500px) {
+    form {
+        width: 90%;
+    }
+}
+    </style>
+</head>
+<body>
+    <form method="POST" action="{{url_for('otp',otp=otp,username=username,mobile=mobile,email=email,address=address,password=password)}}">
+        <h5>Enter the code we just send on Email</h5>
+        <input tyoe="text" name="otp" id="">
+        <button>Sign Up</button>
+    </form>
+</body>
+</html>

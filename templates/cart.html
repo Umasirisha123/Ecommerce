@@ -1,0 +1,35 @@
+
+<h2>Your cart</h2>
+{% if items=='empty %'}
+<p>No Products added to card.</p>
+{% else %}
+<table>
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    {% for key, value in items.items() %}
+    <tr>
+        <td><img src="{{url_for('static',filename=value[3])}}" alt="{{value[0]}}" height="100px"></td>
+        <td>{{ value[0] }}</td>
+        <td>{{ value[4] }}</td>
+        <td> ₹ {{value[1]}}</td>
+        <td>{{value [2] }}</td>
+        <td> ₹ {{value[1] 1 int * value[2]}}</td>
+        <td><button>Remove</button></td>
+        <td><a href="{{ url_for('cartpop',itemid=key) }}">Cancel</a></td>
+    </tr>
+    {% endfor %}
+</tbody> 
+</table>
+{% endfor %}
+<center>
+</center>
+{% endblock %}
